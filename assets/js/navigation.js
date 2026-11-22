@@ -42,6 +42,20 @@ export const MODULE_LINKS = [
   { id: 'reference-library', path: '/reference-library', labelTr: 'Reference Library', descTr: 'Resmi dokümantasyon kaynakları', icon: 'library' },
 ];
 
+export const DASHBOARD_MODULES = [
+  { id: 'toolbox', path: '/toolbox', labelTr: 'ToolBox', descTr: 'Hesaplayıcılar ve pratik araçlar', icon: 'wrench' },
+  { id: 'systemlab', path: '/systemlab', labelTr: 'SystemLab', descTr: 'Sistem kurulumu, bakım ve sorun giderme', icon: 'monitor-cog' },
+  { id: 'netlab', path: '/netlab', labelTr: 'NetLab', descTr: 'Ağ hesaplayıcıları, komutlar ve referanslar', icon: 'network' },
+  { id: 'devlab', path: '/devlab', labelTr: 'DevLab', descTr: 'Kod geliştirme ve yazılım araçları', icon: 'code-2' },
+  { id: 'workdesk', path: '/workdesk', labelTr: 'WorkDesk', descTr: 'Projeler, görevler ve teknik servis', icon: 'briefcase' },
+  { id: 'mynotes', path: '/mynotes', labelTr: 'MyNotes', descTr: 'Kişisel teknik notların', icon: 'notebook-pen' },
+];
+
+export const ROUTE_META = new Map();
+[...NAV_GROUPS.flatMap((g) => g.items), ...FOOTER_ITEMS, ...BOTTOM_NAV_ITEMS].forEach((item) => {
+  if (!ROUTE_META.has(item.path)) ROUTE_META.set(item.path, { labelTr: item.labelTr, icon: item.icon });
+});
+
 export function getSidebarExpanded() {
   return getItem(SIDEBAR_EXPANDED_KEY, true);
 }

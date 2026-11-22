@@ -3,9 +3,10 @@ import { initRouter, registerRoute, setNotFound } from './router.js';
 import { buildHeader } from './components/header.js';
 import { buildSidebar, setSidebarDOMExpanded } from './components/sidebar.js';
 import { buildBottomNav } from './components/bottomNav.js';
-import { getSidebarExpanded, setSidebarExpanded, syncActiveNav, NAV_GROUPS, FOOTER_ITEMS, BOTTOM_NAV_ITEMS } from './navigation.js';
+import { getSidebarExpanded, setSidebarExpanded, syncActiveNav, ROUTE_META } from './navigation.js';
 import { openSearchModal } from './components/searchModal.js';
 import { emptyStateHTML } from './components/emptyState.js';
+import { recordVisit } from './history.js';
 
 import * as dashboardPage from '../../pages/dashboard/index.js';
 import * as toolboxPage from '../../pages/toolbox/index.js';
@@ -22,11 +23,6 @@ import * as dataPage from '../../pages/data/index.js';
 import * as profilePage from '../../pages/profile/index.js';
 
 initTheme();
-
-const TITLES = new Map();
-[...NAV_GROUPS.flatMap((g) => g.items), ...FOOTER_ITEMS, ...BOTTOM_NAV_ITEMS].forEach((item) => {
-  TITLES.set(item.path, item.labelTr);
-});
 
 const appRoot = document.getElementById('app');
 
@@ -73,8 +69,9 @@ setNotFound(() => {
 
 document.addEventListener('tectools:route-change', (e) => {
   syncActiveNav(document, e.detail.path);
-  const label = TITLES.get(e.detail.path);
-  document.title = label ? `${label} · TecTools` : 'TecTools';
+  recordVisit(e.detail.path);
+  const meta = ROUTE_META.get(e.detail.path);
+  document.title = meta ? `${meta.labelTr} · TecTools` : 'TecTools';
 });
 
 document.addEventListener('keydown', (e) => {

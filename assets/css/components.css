@@ -20,6 +20,8 @@
   transition: background-color var(--motion-fast) ease, color var(--motion-fast) ease;
 }
 .btn-icon:hover { background: var(--surface-hover); color: var(--text-primary); }
+.btn-icon:disabled { opacity: 0.35; cursor: not-allowed; }
+.btn-icon:disabled:hover { background: none; color: var(--text-secondary); }
 
 .card {
   background: var(--surface);
@@ -48,6 +50,14 @@
 .list-row__body { flex: 1; min-width: 0; }
 .list-row__title { font-size: var(--text-card-heading); font-weight: 600; color: var(--text-primary); }
 .list-row__desc { font-size: var(--text-helper); color: var(--text-secondary); margin-top: 2px; }
+.list-row__navbtn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+}
 
 .empty-state {
   display: flex;
@@ -96,6 +106,52 @@
   box-shadow: var(--shadow-light);
   color: var(--text-primary);
   font-size: var(--text-body);
+}
+
+.dashboard-widget-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.dashboard-widget-controls { display: flex; align-items: center; gap: 2px; flex-shrink: 0; }
+.dashboard-widget--hidden { opacity: 0.45; }
+.dashboard-widget--hidden .card { border-style: dashed; }
+.dashboard-stat-line { font-size: var(--text-helper); color: var(--text-secondary); margin-top: 10px; }
+
+.star-toggle {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  transition: background-color var(--motion-fast) ease, color var(--motion-fast) ease;
+}
+.star-toggle:hover { background: var(--surface-hover); color: var(--text-secondary); }
+.star-toggle[aria-pressed="true"] { color: var(--primary); }
+
+.btn-ghost-sm {
+  height: 36px;
+  padding: 0 14px;
+  border-radius: var(--radius-btn);
+  border: var(--border-width) solid var(--border);
+  color: var(--text-secondary);
+  font-size: var(--text-helper);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color var(--motion-fast) ease, border-color var(--motion-fast) ease, color var(--motion-fast) ease;
+}
+.btn-ghost-sm:hover { background: var(--surface-hover); }
+.btn-ghost-sm[aria-pressed="true"] {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 8%, transparent);
 }
 
 .modal-overlay {

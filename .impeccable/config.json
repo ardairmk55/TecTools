@@ -26,6 +26,15 @@
         "value": "inter",
         "createdAt": "2026-11-22T21:41:04.651Z",
         "reason": "Brief-pinned UI font (directive section 6.6, PRODUCT.md Brand Commitments). Operate-mode surface — new-work.md: 'Operate and Read surfaces are well served by system stacks and workhorse UI faces,' which is exactly what Inter is here, not a generic AI-cliché display choice."
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "999px",
+        "files": [
+          "assets/css/base.css"
+        ],
+        "createdAt": "2026-11-22T22:04:18.390Z",
+        "reason": "Pre-existing Phase 1 scrollbar-thumb pill shape (border-radius:999px is the standard fully-round idiom for a thumb, not a new tier); unrelated to Phase 2 changes, just re-surfaced because base.css was touched this phase."
       }
     ]
   }

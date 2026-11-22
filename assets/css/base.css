@@ -34,6 +34,18 @@ caret-color: var(--primary);
 ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
 
 /* Focus ring — visible, theme-aware, never suppressed */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 :focus-visible {
   outline: var(--focus-ring) solid var(--primary);
   outline-offset: 2px;
