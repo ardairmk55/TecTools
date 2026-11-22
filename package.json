@@ -1,0 +1,13 @@
+{
+  "name": "tectools",
+  "version": "0.1.0",
+  "private": true,
+  "description": "TecTools — Professional Technical Workspace (Phase 1: foundation & branding)",
+  "scripts": {
+    "dev": "tailwindcss -i ./assets/css/tailwind-input.css -o ./assets/css/tailwind.css --watch",
+    "build": "tailwindcss -i ./assets/css/tailwind-input.css -o ./assets/css/tailwind.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  }
+}

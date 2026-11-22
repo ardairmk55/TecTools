@@ -1,0 +1,15 @@
+{
+  "name": "TecTools — Teknik Çalışma Merkezi",
+  "short_name": "TecTools",
+  "description": "Teknisyenler için teknik araçlar, sistem rehberleri ve iş yönetimi tek çatı altında.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#F1F5F9",
+  "theme_color": "#0284C7",
+  "lang": "tr",
+  "icons": [
+    { "src": "assets/images/brand/tectools-logo-original.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/images/brand/tectools-logo-original.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

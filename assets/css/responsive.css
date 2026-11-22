@@ -1,0 +1,27 @@
+/* Breakpoints — spec section 19. Mobile: 0-639, Tablet: 640-1023, Desktop: 1024+. */
+
+/* Mobile-first base lives in layout.css; these narrow/widen it. */
+
+@media (max-width: 639.98px) {
+  .app-sidebar { display: none; }
+  .app-header__brand { display: flex; }
+  .app-sidebar-toggle { display: none; }
+  .app-header__kbd-hint { display: none; }
+  .app-header { padding: 0 16px; gap: 10px; }
+  .app-header__brand { gap: 8px; }
+  .app-header__brand .tt-wordmark { font-size: 16px; }
+  .app-header__search-label { display: none; }
+  .app-header__search-trigger { flex: none; width: 44px; height: 44px; justify-content: center; padding: 0; margin-left: auto; }
+  .app-bottom-nav { display: flex; }
+  .app-main { padding-bottom: calc(var(--bottom-nav-height) + 16px); }
+  .app-shell { grid-template-columns: 1fr; }
+}
+
+@media (min-width: 640px) {
+  .app-bottom-nav { display: none; }
+  .app-shell { grid-template-columns: var(--sidebar-width) 1fr; }
+  .app-shell[data-sidebar-collapsed="true"] { grid-template-columns: var(--sidebar-collapsed-width) 1fr; }
+}
+
+html { overflow-x: hidden; }
+body { overflow-x: hidden; }

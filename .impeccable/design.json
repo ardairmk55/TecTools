@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-23T00:00:00Z",
+  "title": "Design System: TecTools",
+  "extensions": {
+    "colorMeta": {
+      "arctic-blue": { "role": "primary", "displayName": "Arctic Blue", "canonical": "#0284C7", "tonalRamp": ["#082F49", "#0C4A6E", "#075985", "#0369A1", "#0284C7", "#38BDF8", "#7DD3FC", "#E0F2FE"] },
+      "sky-blue": { "role": "primary-dark", "displayName": "Sky Blue", "canonical": "#38BDF8", "tonalRamp": ["#0C4A6E", "#075985", "#0369A1", "#0284C7", "#38BDF8", "#7DD3FC", "#BAE6FD", "#E0F2FE"] },
+      "teal": { "role": "secondary", "displayName": "Teal", "canonical": "#14B8A6", "tonalRamp": ["#042F2E", "#134E4A", "#0F766E", "#0D9488", "#14B8A6", "#2DD4BF", "#5EEAD4", "#CCFBF1"] },
+      "midnight-navy": { "role": "text-primary", "displayName": "Midnight Navy", "canonical": "#0F172A", "tonalRamp": ["#020617", "#0F172A", "#1E293B", "#334155", "#475569", "#64748B", "#94A3B8", "#CBD5E1"] },
+      "text-secondary": { "role": "text-secondary-body-safe", "displayName": "Body-Safe Secondary", "canonical": "#475569", "tonalRamp": ["#1E293B", "#334155", "#475569", "#64748B", "#94A3B8", "#CBD5E1", "#E2E8F0", "#F1F5F9"] },
+      "text-muted": { "role": "chrome-only-not-body-safe", "displayName": "Chrome-Only Muted", "canonical": "#94A3B8", "tonalRamp": ["#334155", "#475569", "#64748B", "#94A3B8", "#CBD5E1", "#E2E8F0", "#F1F5F9", "#F8FAFC"] },
+      "arctic-bg": { "role": "neutral-bg", "displayName": "Arctic Background", "canonical": "#F1F5F9", "tonalRamp": ["#0B1220", "#111C2E", "#1E293B", "#334155", "#64748B", "#CBD5E1", "#E2E8F0", "#F1F5F9"] },
+      "pure-white": { "role": "neutral-surface", "displayName": "Pure White", "canonical": "#FFFFFF", "tonalRamp": ["#111C2E", "#1E293B", "#334155", "#64748B", "#94A3B8", "#CBD5E1", "#F1F5F9", "#FFFFFF"] }
+    },
+    "typographyMeta": {
+      "h1": { "displayName": "H1", "purpose": "Page-level welcome/title text." },
+      "h2": { "displayName": "H2", "purpose": "Section headings within a page." },
+      "h3": { "displayName": "H3", "purpose": "Sub-section and empty-state titles." },
+      "card-heading": { "displayName": "Card Heading", "purpose": "List-row titles, card-internal headings." },
+      "body": { "displayName": "Body", "purpose": "Default running text, descriptions." },
+      "helper": { "displayName": "Helper", "purpose": "List-row descriptions, group labels, bottom-nav labels." },
+      "code": { "displayName": "Code", "purpose": "Inline code, command snippets, technical identifiers." }
+    },
+    "shadows": [
+      { "name": "ambient", "value": "0 4px 16px rgba(15,23,42,.05)", "purpose": "The system's single shadow, used uniformly on cards, toasts, and modal panels. Dark theme: 0 4px 16px rgba(0,0,0,.28)." }
+    ],
+    "motion": [
+      { "name": "motion-fast", "value": "150ms ease", "purpose": "Hover/focus color and background transitions." },
+      { "name": "motion-base", "value": "200ms ease", "purpose": "Sidebar width collapse, theme background/color transition." }
+    ],
+    "breakpoints": [
+      { "name": "mobile-max", "value": "639.98px" },
+      { "name": "desktop-min", "value": "640px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main call-to-action button; accent background, white text.",
+      "html": "<button class=\"ds-btn-primary\">Kaydet</button>",
+      "css": ".ds-btn-primary { height: 44px; padding: 0 18px; border-radius: 10px; background: #0284C7; color: #FFFFFF; font-weight: 600; font-family: Inter, sans-serif; font-size: 14px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: none; transition: background-color 150ms ease; } .ds-btn-primary:hover { background: #0369A1; } .ds-btn-primary:focus-visible { outline: 2px solid #0284C7; outline-offset: 2px; }"
+    },
+    {
+      "name": "Icon Button",
+      "kind": "button",
+      "refersTo": "btn-icon",
+      "description": "40x40 icon-only button used in header and list rows.",
+      "html": "<button class=\"ds-btn-icon\" aria-label=\"Bildirimler\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M6 10a6 6 0 0 1 12 0c0 5 2 6 2 6H4s2-1 2-6z\"/><path d=\"M10 20a2 2 0 0 0 4 0\"/></svg></button>",
+      "css": ".ds-btn-icon { width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border-radius: 10px; color: #475569; background: transparent; border: none; transition: background-color 150ms ease, color 150ms ease; } .ds-btn-icon:hover { background: #F8FAFC; color: #0F172A; }"
+    },
+    {
+      "name": "Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Base elevated surface for grouped content; single ambient shadow, 15px radius.",
+      "html": "<div class=\"ds-card\">Kart içeriği</div>",
+      "css": ".ds-card { background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 15px; box-shadow: 0 4px 16px rgba(15,23,42,.05); }"
+    },
+    {
+      "name": "List Row",
+      "kind": "custom",
+      "refersTo": "list-row",
+      "description": "Signature content primitive: icon chip + title/description + chevron, used for module lists and history across the app.",
+      "html": "<button type=\"button\" class=\"ds-list-row\"><span class=\"ds-list-row-icon\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"7\" cy=\"7\" r=\"3.2\"/><line x1=\"9.3\" y1=\"9.3\" x2=\"19\" y2=\"19\"/></svg></span><span class=\"ds-list-row-body\"><span class=\"ds-list-row-title\">SystemLab</span><span class=\"ds-list-row-desc\">Sistem kurulumu, bakım ve sorun giderme</span></span><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"9,5 16,12 9,19\"/></svg></button>",
+      "css": ".ds-list-row { display: flex; align-items: center; gap: 14px; width: 100%; padding: 14px 16px; border-bottom: 1px solid #E2E8F0; background: none; text-align: left; transition: background-color 150ms ease; } .ds-list-row:hover { background: #F8FAFC; } .ds-list-row-icon { width: 38px; height: 38px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; border-radius: 12px; background: rgba(2,132,199,0.1); color: #0284C7; } .ds-list-row-body { flex: 1; min-width: 0; display: flex; flex-direction: column; } .ds-list-row-title { font-size: 15px; font-weight: 600; color: #0F172A; } .ds-list-row-desc { font-size: 12px; color: #475569; margin-top: 2px; }"
+    },
+    {
+      "name": "Empty State",
+      "kind": "custom",
+      "refersTo": "empty-state",
+      "description": "Honest 'coming soon' stub pattern used by every module besides Dashboard.",
+      "html": "<div class=\"ds-empty-state\"><svg class=\"ds-empty-state-icon\" width=\"40\" height=\"40\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><line x1=\"12\" y1=\"7\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"12\" x2=\"16\" y2=\"14\"/></svg><span class=\"ds-empty-state-title\">Henüz işlem yok</span><span class=\"ds-empty-state-desc\">Araç ve modülleri kullanmaya başladığında son işlemlerin burada görünecek.</span></div>",
+      "css": ".ds-empty-state { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px; padding: 56px 24px; color: #94A3B8; } .ds-empty-state-icon { width: 40px; height: 40px; color: #94A3B8; margin-bottom: 4px; } .ds-empty-state-title { font-size: 18px; font-weight: 600; color: #0F172A; } .ds-empty-state-desc { font-size: 14px; color: #475569; max-width: 42ch; }"
+    },
+    {
+      "name": "Input Field",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Text input with body-safe placeholder color (post-review AA fix).",
+      "html": "<input class=\"ds-input-field\" placeholder=\"Ara: araç, komut, rehber...\" />",
+      "css": ".ds-input-field { height: 46px; width: 100%; padding: 0 14px; border-radius: 10px; border: 1px solid #E2E8F0; background: #FFFFFF; color: #0F172A; font-size: 14px; transition: border-color 150ms ease; } .ds-input-field:focus { border-color: #0284C7; outline: none; } .ds-input-field::placeholder { color: #475569; }"
+    },
+    {
+      "name": "Wordmark",
+      "kind": "custom",
+      "refersTo": "wordmark",
+      "description": "CSS-text logo; Two-T Rule gradient confined to the two capital T's, rest in Midnight Navy.",
+      "html": "<span class=\"ds-wordmark\"><span class=\"ds-wordmark-t\">T</span><span class=\"ds-wordmark-rest\">ec</span><span class=\"ds-wordmark-t\">T</span><span class=\"ds-wordmark-rest\">ools</span></span>",
+      "css": ".ds-wordmark { display: inline-flex; align-items: baseline; font-weight: 700; font-size: 18px; letter-spacing: -0.01em; font-family: Inter, sans-serif; } .ds-wordmark-t { background: linear-gradient(135deg, #0284C7, #38BDF8); -webkit-background-clip: text; background-clip: text; color: transparent; } .ds-wordmark-rest { color: #0F172A; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Arctic Blue",
+    "overview": "Arctic Blue is one technician workspace rendered as a single calm instrument panel, not six tool sites stitched under one logo. The thesis the build actually carries: restraint over decoration. Surfaces are flat, near-white panels on a cool arctic-gray canvas; the only color event on a screen is the Arctic Blue accent marking the active destination, an icon chip, or a primary action. Everything else stays in a narrow neutral range so the accent reads as signal, not noise. The build confirms the brief's own anti-references: no gradients, no neon, no glass, no decorative shapes, no strong shadows. Dark theme is a fully specified second token set, not a tinted afterthought.",
+    "keyCharacteristics": [
+      "Flat, bordered surfaces — one hairline border, one soft shadow, no shadow scale",
+      "A single accent color per theme, used sparingly (active nav, icon tint, primary button, focus ring)",
+      "Tiered radii, not a flat corner value — small chips, mid cards, large panels, and buttons each round differently",
+      "Inter for all UI text; JetBrains Mono reserved strictly for code/commands",
+      "Confirmed rejections: gradients (outside the wordmark), neon lighting, glass/blur effects, decorative shapes, strong shadows, glyph-icon fonts"
+    ],
+    "rules": [
+      { "name": "The Two-T Rule", "body": "Gradient is permitted in exactly one place in the entire system: the two capital T's of the \"TecTools\" wordmark. Nowhere else. The square TT.png icon mark and every other surface stay flat.", "section": "colors" },
+      { "name": "The One Accent Rule", "body": "Each theme has exactly one primary accent (Arctic Blue light / Sky Blue dark) carrying all interactive-state color. Teal is a reserved secondary, not a second interactive color.", "section": "colors" },
+      { "name": "The One-Face Rule", "body": "Inter carries every UI role from H1 down to helper text; there is no separate display/headline typeface.", "section": "typography" },
+      { "name": "The Single-Shadow Rule", "body": "One ambient shadow token exists and it is the same shadow everywhere elevation is needed. No hover-lift, directional, or stacked shadows.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do use the single ambient shadow token (--shadow-light) for every elevated surface; do not create a second shadow tier.",
+      "Do use --text-secondary for any body-adjacent or placeholder text; it is the only text-muted-range token verified at AA contrast.",
+      "Do keep the wordmark gradient confined to the two T's (Two-T Rule); everywhere else stays flat.",
+      "Do reuse the .list-row / .card / .empty-state primitives for new modules rather than inventing new list or stub patterns.",
+      "Do respect the tiered radius scale (12/15/18/10px) by component scale, not a single flat radius."
+    ],
+    "donts": [
+      "Don't apply gradients, neon color, glass/blur, or decorative shapes anywhere outside the wordmark's two T's.",
+      "Don't use --text-muted for body text, descriptions, or placeholders — it is chrome-only and previously caused an AA contrast failure when misused as body text.",
+      "Don't use hard-offset or strong/dramatic shadows, or stack multiple shadow layers on one surface.",
+      "Don't introduce glyph-icon fonts or a second icon family; the system uses exactly one hand-authored line-icon set.",
+      "Don't invent module-specific content or components for the stub modules — they are honest empty states until their own phase builds them."
+    ]
+  }
+}

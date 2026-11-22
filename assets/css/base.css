@@ -1,0 +1,50 @@
+/* Reset + base typography. */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color var(--motion-base) ease, color var(--motion-base) ease;
+}
+h1, h2, h3, h4, p, figure { margin: 0; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; background: none; border: none; }
+a { color: inherit; text-decoration: none; }
+img, svg { display: block; max-width: 100%; }
+
+code, pre, .mono { font-family: var(--font-mono); font-size: var(--text-code); }
+
+h1 { font-size: var(--text-h1); font-weight: 700; letter-spacing: -0.01em; }
+h2 { font-size: var(--text-h2); font-weight: 700; letter-spacing: -0.01em; }
+h3 { font-size: var(--text-h3); font-weight: 600; }
+
+/* Theme-aware text selection + caret + scrollbar (craft-floor: browser surfaces carry the design) */
+::selection { background: color-mix(in srgb, var(--primary) 30%, transparent); color: var(--text-primary); }
+caret-color: var(--primary);
+* { scrollbar-color: var(--border-strong) transparent; scrollbar-width: thin; }
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* Focus ring — visible, theme-aware, never suppressed */
+:focus-visible {
+  outline: var(--focus-ring) solid var(--primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

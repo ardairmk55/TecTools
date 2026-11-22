@@ -1,0 +1,32 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "gradient-text",
+        "value": "*",
+        "files": [
+          "assets/css/components.css"
+        ],
+        "createdAt": "2026-11-22T13:57:45.890Z",
+        "reason": "Brand-pinned logo identity: directive requires Arctic Blue gradient on exactly the two T's of the TecTools wordmark (.tt-wordmark__t), confirmed as a binding brand commitment in PRODUCT.md. Not decorative heading/metric gradient; no other gradient text in the product."
+      },
+      {
+        "rule": "gradient-text",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-22T21:32:09.102Z",
+        "reason": "Same brand-pinned TecTools logo gradient as components.css:.tt-wordmark__t (see that file's ignore reason); index.html just links the stylesheet."
+      },
+      {
+        "rule": "overused-font",
+        "value": "inter",
+        "createdAt": "2026-11-22T21:41:04.651Z",
+        "reason": "Brief-pinned UI font (directive section 6.6, PRODUCT.md Brand Commitments). Operate-mode surface — new-work.md: 'Operate and Read surfaces are well served by system stacks and workhorse UI faces,' which is exactly what Inter is here, not a generic AI-cliché display choice."
+      }
+    ]
+  }
+}

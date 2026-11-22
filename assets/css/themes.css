@@ -1,0 +1,45 @@
+/* Dark theme overrides — spec 6.4/6.5. Applied via [data-theme="dark"] on <html>. */
+:root[data-theme="dark"] {
+  --bg: #0B1220;
+  --surface: #111C2E;
+  --surface-elevated: #1E293B;
+  --surface-hover: #263449;
+  --text-primary: #F8FAFC;
+  --text-secondary: #CBD5E1;
+  --text-muted: #94A3B8;
+  --border: #263449;
+  --border-strong: #334155;
+  --primary: #38BDF8;
+  --primary-hover: #7DD3FC;
+  --secondary: #2DD4BF;
+
+  --status-success: #4ADE80;
+  --status-warning: #FBBF24;
+  --status-danger: #F87171;
+  --status-info: #38BDF8;
+
+  --shadow-light: 0 4px 16px rgba(0, 0, 0, 0.28);
+}
+
+/* Respect OS preference before JS runs, when the user has not chosen explicitly */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]):not([data-theme="dark"]) {
+    --bg: #0B1220;
+    --surface: #111C2E;
+    --surface-elevated: #1E293B;
+    --surface-hover: #263449;
+    --text-primary: #F8FAFC;
+    --text-secondary: #CBD5E1;
+    --text-muted: #94A3B8;
+    --border: #263449;
+    --border-strong: #334155;
+    --primary: #38BDF8;
+    --primary-hover: #7DD3FC;
+    --secondary: #2DD4BF;
+    --status-success: #4ADE80;
+    --status-warning: #FBBF24;
+    --status-danger: #F87171;
+    --status-info: #38BDF8;
+    --shadow-light: 0 4px 16px rgba(0, 0, 0, 0.28);
+  }
+}
